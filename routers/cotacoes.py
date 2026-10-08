@@ -3,6 +3,9 @@ from sqlalchemy.orm import Session
 import httpx
 from database import SessionLocal
 from models import CotacaoDB
+import os
+
+AWESOMEAPI_KEY = os.getenv("AWESOMEAPI_KEY")
 
 router = APIRouter(prefix="/cotacao", tags=["Cotação"])
 
@@ -18,10 +21,12 @@ async def obter_cotacao(moeda: str, db: Session = Depends(get_db)):
     moeda = moeda.upper()
     url = f"https://economia.awesomeapi.com.br/json/last/{moeda}-BRL"
 
-    # 1. Tenta chamar a AwesomeAPI
+    # 1. Tenta chamar a AwesomeAPI (enviando a chave, se existir)
+    headers = {"x-api-key": AWESOMEAPI_KEY} if AWESOMEAPI_KEY else {}
+
     try:
         async with httpx.AsyncClient(timeout=10) as client:
-            resposta = await client.get(url)
+            resposta = await client.get(url, headers=headers)
     except httpx.RequestError as erro:
         raise HTTPException(
             status_code=502,
