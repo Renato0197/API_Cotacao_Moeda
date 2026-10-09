@@ -1,6 +1,6 @@
 # API de Cotação de Moedas
 API REST em Python que consulta cotações de moedas em tempo real, salva cada consulta em um banco de dados e calcula estatísticas (média, mínimo e máximo) a partir do histórico coletado.
-**API no ar:** `[<URL-DA-SUA-API>](https://api-cotacao-moeda.onrender.com/)` (documentação interativa em `/docs`)
+**API no ar:** `https://api-cotacao-moeda.onrender.com` (documentação interativa em `/docs`)
 > Observação: a API está hospedada em um plano gratuito, então a primeira requisição depois de um período sem uso pode demorar alguns segundos para responder.
 
 ## Tecnologias
