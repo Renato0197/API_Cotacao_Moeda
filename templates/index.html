@@ -51,7 +51,7 @@
 
     <h2>Como consumir esta API</h2>
     <p>Basta fazer uma requisição GET para a rota abaixo, informando o código da moeda (ex: USD, EUR, GBP):</p>
-    <pre><code>GET https://sua-api-no-render.onrender.com/cotacao/USD</code></pre>
+    <pre><code>GET https://api-cotacao-moeda.onrender.com/cotacao/USD</code></pre>
 
     <p>Exemplo em Python, usando a biblioteca <code>requests</code>:</p>
     <pre><code>import requests
@@ -65,6 +65,6 @@ print(resposta.json())</code></pre>
         Há também uma rota de estatísticas, calculadas a partir do histórico
         já salvo para aquela moeda:
     </p>
-    <pre><code>GET https://sua-api-no-render.onrender.com/cotacao/USD/estatisticas</code></pre>
+    <pre><code>GET https://api-cotacao-moeda.onrender.com/cotacao/EUR/estatisticas</code></pre>
 </body>
 </html>
